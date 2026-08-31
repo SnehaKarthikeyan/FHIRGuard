@@ -33,21 +33,15 @@ The idea behind FHIRGuard is to bring these troubleshooting steps together in on
 
 The current MVP follows this flow:
 
-```text
 FHIR Request
      |
-     v
 FHIR Validation Agent
      |
-     v
 Troubleshooting Agent
      |
-     v
 Root Cause Agent
      |
-     v
 Fix / Recommendation
-```
 
 Each step has a specific responsibility.
 
@@ -101,7 +95,6 @@ Suppose the target server or profile requires a family name.
 
 The troubleshooting process can identify:
 
-```text
 Issue:
 Patient.name.family is required by the target configuration.
 
@@ -110,7 +103,6 @@ The request does not contain the required family name.
 
 Suggested Fix:
 Add Patient.name.family to the Patient resource.
-```
 
 One important point here is that **FHIR base validation and target-server validation are not always the same thing**.
 
@@ -126,7 +118,6 @@ I did not want the project to be just a chatbot where a user enters an error and
 
 The troubleshooting process is divided into separate steps:
 
-```text
 Validate
    ↓
 Understand the error
@@ -134,7 +125,6 @@ Understand the error
 Find the likely root cause
    ↓
 Suggest a fix
-```
 
 Each agent has a different responsibility and uses the result from the previous step.
 
@@ -161,7 +151,6 @@ This makes the troubleshooting flow easier to follow and also gives me a way to 
 
 The project follows a simple Spring Boot structure.
 
-```text
 FHIRGuard
 │
 ├── src
@@ -173,7 +162,6 @@ FHIRGuard
 │
 ├── pom.xml
 └── README.md
-```
 
 The main application contains the FHIR validation, troubleshooting, root-cause analysis, and evaluation components.
 
@@ -317,7 +305,6 @@ Validate Again
 
 The same approach could eventually be extended to other healthcare integration problems involving HL7 v2, DICOM, and EMR/EHR integrations.
 
----
 
 ## Why I built this
 
@@ -329,7 +316,6 @@ The goal of FHIRGuard is simple:
 
 This MVP is my first step toward that idea using an agent-based troubleshooting workflow.
 
----
 
 ## Disclaimer
 
