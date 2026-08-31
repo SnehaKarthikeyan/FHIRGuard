@@ -1,5 +1,6 @@
 # Input :
 
+```json
 {
   "fhirRequest": {
     "resourceType": "Patient",
@@ -13,6 +14,7 @@
   "httpStatus": 400,
   "errorMessage": "Patient.name.family is required"
 }
+```
 
 
 # Output :
