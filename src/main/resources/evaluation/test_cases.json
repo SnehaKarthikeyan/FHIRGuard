@@ -1,0 +1,72 @@
+[
+  {
+    "id": "FHIR-001",
+    "resourceType": "Patient",
+    "description": "Missing family name",
+    "request": {
+      "resourceType": "Patient",
+      "name": [
+        {
+          "given": ["John"]
+        }
+      ]
+    },
+    "httpStatus": 400,
+    "errorMessage": "Patient.name.family is required",
+    "expectedRootCause": "family"
+  },
+  {
+    "id": "FHIR-002",
+    "resourceType": "Patient",
+    "description": "Invalid birth date",
+    "request": {
+      "resourceType": "Patient",
+      "birthDate": "31-12-1990"
+    },
+    "httpStatus": 400,
+    "errorMessage": "Invalid birthDate format",
+    "expectedRootCause": "birthDate"
+  },
+  {
+    "id": "FHIR-003",
+    "resourceType": "Patient",
+    "description": "Invalid gender",
+    "request": {
+      "resourceType": "Patient",
+      "gender": "invalidgender"
+    },
+    "httpStatus": 400,
+    "errorMessage": "Unknown gender code",
+    "expectedRootCause": "gender"
+  },
+  {
+    "id": "FHIR-004",
+    "resourceType": "Observation",
+    "description": "Invalid observation status",
+    "request": {
+      "resourceType": "Observation",
+      "status": "invalid",
+      "code": {
+        "text": "Heart rate"
+      }
+    },
+    "httpStatus": 400,
+    "errorMessage": "Invalid Observation.status",
+    "expectedRootCause": "status"
+  },
+  {
+    "id": "FHIR-005",
+    "resourceType": "Observation",
+    "description": "Missing observation subject",
+    "request": {
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Heart rate"
+      }
+    },
+    "httpStatus": 400,
+    "errorMessage": "Observation.subject is required",
+    "expectedRootCause": "subject"
+  }
+]
