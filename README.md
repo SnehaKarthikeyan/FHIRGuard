@@ -27,6 +27,30 @@ Normally, a developer has to go through the error, validate the resource, check 
 
 The idea behind FHIRGuard is to bring these troubleshooting steps together in one workflow.
 
+
+## Who is facing this problem?
+
+FHIR troubleshooting is mainly a day-to-day problem for developers and teams working on healthcare integrations.
+
+Some of the people who can face this problem are:
+
+* **FHIR / Healthcare Integration Developers** – They work with FHIR APIs and regularly investigate validation and server errors.
+* **Backend Developers** – Developers building backend services may know how to work with REST APIs but may not always know every FHIR rule or implementation-specific requirement.
+* **Interoperability Engineers** – They often need to understand why the same FHIR resource works with one system but is rejected by another.
+* **EMR/EHR Integration Teams** – These teams connect healthcare applications and systems and may have to deal with different FHIR profiles and server-specific constraints.
+* **QA and API Testing Teams** – They need to understand why a FHIR request failed so that the issue can be reproduced and reported properly.
+* **Developers who are new to a particular FHIR implementation** – Even if they understand FHIR, a target server can have additional requirements that are not immediately obvious from the error message.
+
+### What makes the problem difficult?
+
+The difficult part is not always getting the HTTP error.
+
+For example, a developer might receive:
+
+```text
+HTTP 400
+Patient.name.family is required
+
 ---
 
 ## How does FHIRGuard work?
