@@ -1,4 +1,4 @@
-# Input
+# Input :
 
 {
   "fhirRequest": {
@@ -14,9 +14,8 @@
   "errorMessage": "Patient.name.family is required"
 }
 
----
 
-# Output
+# Output :
 
 {
     "agentTrace": [
