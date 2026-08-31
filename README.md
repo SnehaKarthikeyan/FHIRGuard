@@ -50,6 +50,7 @@ For example, a developer might receive:
 ```text
 HTTP 400
 Patient.name.family is required
+```
 
 ---
 
