@@ -70,6 +70,6 @@ The evaluation looks at whether FHIRGuard can:
 
 ## Actual Results
 
-The actual FHIRGuard output is recorded directly inside each test case file under 'test-cases/'.
+The actual FHIRGuard output is recorded directly inside each test case file under `test-cases/`.
 
 The expected results are documented separately in `expected-results.json`.
