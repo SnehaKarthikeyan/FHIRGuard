@@ -1,6 +1,6 @@
-# FHIRGuard
+FHIRGuard
 
-## Agentic AI based FHIR Troubleshooting Assistant
+Agentic AI based FHIR Troubleshooting Assistant
 
 FHIRGuard is a small MVP that I built to help developers troubleshoot **HL7 FHIR R4 API issues**.
 
