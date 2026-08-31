@@ -19,6 +19,7 @@
 
 # Output :
 
+```json
 {
     "agentTrace": [
         "Local Troubleshooting Agent -> Patient.name.family is reported as required by the target server or profile. The resource passed the currently configured base FHIR validation.",
@@ -56,3 +57,4 @@
     "resourceType": "Patient",
     "rootCause": "Patient.name.family is reported as required by the target server or profile. The resource passed the currently configured base FHIR validation."
 }
+```
