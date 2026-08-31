@@ -30,12 +30,17 @@ For example:
 
 ```json
 {
-  "resourceType": "Patient",
-  "name": [
-    {
-      "given": ["John"]
-    }
-  ]
+  "fhirRequest": {
+    "resourceType": "Patient",
+    "id": "patient-001",
+    "name": [
+      {
+        "given": ["John"]
+      }
+    ]
+  },
+  "httpStatus": 400,
+  "errorMessage": "Patient.name.family is required"
 }
 ```
 
