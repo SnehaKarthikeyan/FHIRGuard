@@ -1,0 +1,56 @@
+''' Input
+
+{
+  "fhirRequest": {
+    "resourceType": "Patient",
+    "id": "patient-001",
+    "name": [
+      {
+        "given": ["John"]
+      }
+    ]
+  },
+  "httpStatus": 400,
+  "errorMessage": "Patient.name.family is required"
+}
+
+
+''' Output
+
+{
+    "agentTrace": [
+        "Local Troubleshooting Agent -> Patient.name.family is reported as required by the target server or profile. The resource passed the currently configured base FHIR validation.",
+        "FHIR Validator Agent -> FHIR resource passed configured validation.",
+        "Local Root Cause Agent -> Patient.name.family is reported as required by the target server or profile. The resource passed the currently configured base FHIR validation.",
+        "Local Verification Agent -> VERIFIED_LOCAL: Diagnosis is based on the server error, HTTP status and local rules.",
+        "Fix Recommendation Agent -> corrected payload generated"
+    ],
+    "confidence": 0.9,
+    "correctedPayload": {
+        "resourceType": "Patient",
+        "id": "patient-001",
+        "name": [
+            {
+                "given": [
+                    "John"
+                ],
+                "family": "<PROVIDE_FAMILY_NAME>"
+            }
+        ]
+    },
+    "evidence": [
+        "Server error mentions Patient.name.family.",
+        "Base FHIR validation passed.",
+        "The failure may be caused by a target profile or server-specific constraint.",
+        "Resource type: Patient",
+        "Server error: Patient.name.family is required",
+        "FHIR JSON parsed successfully.",
+        "Server error",
+        "HTTP status",
+        "Local troubleshooting rules"
+    ],
+    "httpStatus": 400,
+    "recommendedFix": "Provide Patient.name.family and validate the resource against the target profile or server-specific rules.",
+    "resourceType": "Patient",
+    "rootCause": "Patient.name.family is reported as required by the target server or profile. The resource passed the currently configured base FHIR validation."
+}
