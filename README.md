@@ -49,6 +49,46 @@ Root Cause Agent
 Fix / Recommendation
 ```
 
+---
+
+## Architecture
+
+FHIRGuard follows a simple agent-based troubleshooting workflow. The FHIR request is first validated, then the validation result and server response are analyzed to identify the likely root cause and recommend a fix.
+
+```mermaid
+flowchart TD
+    A[FHIR Request<br/>JSON / FHIR R4] --> B[FHIR Validation Agent]
+
+    B --> C[HAPI FHIR R4 Validator]
+
+    C --> D[Validation Result]
+
+    D --> E[Troubleshooting Agent]
+
+    E --> F[HTTP Status + Server Error<br/>Analysis]
+
+    F --> G[Troubleshooting Finding]
+
+    G --> H[Root Cause Agent]
+
+    H --> I[Root Cause Analysis]
+
+    I --> J[Fix / Recommendation]
+
+    J --> K[Final Troubleshooting Result]
+
+    L[Evaluation Cases] --> B
+```
+
+### Main components
+
+- **FHIR Validation Agent** – parses and validates the FHIR R4 resource.
+- **HAPI FHIR Validator** – performs the configured FHIR validation.
+- **Troubleshooting Agent** – analyzes the validation result together with the HTTP response and server error.
+- **Root Cause Agent** – identifies the likely reason for the failure.
+- **Fix / Recommendation** – provides the next action for the developer.
+- **Evaluation Cases** – provides repeatable scenarios for testing the workflow.
+
 Each step has a specific responsibility.
 
 ### 1. FHIR Validation Agent
