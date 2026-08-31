@@ -218,7 +218,6 @@ This makes the troubleshooting flow easier to follow and also gives me a way to 
 * **JUnit**
 * **REST APIs**
 * **OpenAI API** for optional LLM-based reasoning
-* **Docker / AWS** for deployment possibilities
 
 ---
 
